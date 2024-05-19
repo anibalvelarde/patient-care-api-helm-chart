@@ -1,0 +1,56 @@
+# Helm chart directories and files
+*.tgz
+charts/
+templates/*.bak
+templates/*.swp
+templates/*.tmp
+values.yaml
+
+# Specific Helm generated files
+helm-release.yaml
+helm-values.yaml
+helm-secrets.yaml
+
+# Kubernetes-specific files
+*.log
+*.out
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+
+# Node modules (if you have any JavaScript related tasks)
+node_modules/
+
+# Python virtual environments (if you have any Python related tasks)
+venv/
+__pycache__/
+*.py[cod]
+
+# Build directories
+dist/
+build/
+
+# Docker related
+.dockerignore
+Dockerfile
+
+# Ignore Helm specific configuration files for local development
+.helm/
+.helmignore
+
+# Ignore generated Kubernetes manifests
+manifests/
