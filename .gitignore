@@ -24,6 +24,9 @@ Thumbs.db
 .vscode/
 *.iml
 
+# ignore user-specific files
+side-charting/
+
 # Logs
 logs/
 *.log

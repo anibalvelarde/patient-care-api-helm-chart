@@ -41,27 +41,27 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           env:
-            - name: DB_HOST
+            - name: DATABASE_HOST
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
                   key: dbHost
-            - name: DB_PORT
+            - name: DATABASE_PORT
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
                   key: dbPort
-            - name: DB_NAME
+            - name: DATABASE_NAME
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
                   key: dbName
-            - name: DB_USER
+            - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
                   key: dbUser
-            - name: DB_PASSWORD
+            - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
@@ -71,11 +71,6 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.env.dbSecretName }}
                   key: aspNetEnv
-            - name: ASPNETCORE_Kestrel__Certificates__Default__Password
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Values.env.dbSecretName }}
-                  key: aspNetKestrelPassword
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
